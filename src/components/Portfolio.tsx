@@ -4,40 +4,48 @@ import cinema from '../assets/portfolio/cinema.png'
 import createSet from '../assets/portfolio/create-set.png'
 import footShop from '../assets/portfolio/footshop.jpg'
 import shoppingCart from '../assets/portfolio/shopping-cart.png'
-import studentSite from '../assets/portfolio/studentsite.png'
+import socialMedia from '../assets/portfolio/socialmedia.png'
 import { Element } from 'react-scroll'
 
 const Portfolio = () => {
-  const portfolios: { id: number; src: string; link: string }[] = [
+  const withWebBTNstyle = 'h-auto p-3 duration-200 hover:scale-105 mr-20'
+  const withoutWebBTNstyle = 'h-auto p-3 duration-200 hover:scale-105'
+  const portfolios: {
+    id: number
+    src: string
+    link: string
+    web?: string
+  }[] = [
     {
       id: 1,
+      src: socialMedia,
+      link: 'https://github.com/eladg123/sm-mern-server',
+      web: 'https://memories-social-media-eg.netlify.app/posts',
+    },
+    {
+      id: 21,
       src: footShop,
       link: 'https://github.com/eladg123/FootStareCommerce',
     },
     {
-      id: 2,
+      id: 3,
       src: shoppingCart,
       link: 'https://github.com/eladg123/shoppingCart-redux-toolkit',
     },
     {
-      id: 3,
+      id: 4,
       src: createSet,
       link: 'https://github.com/eladg123/create-set-typescript',
     },
     {
-      id: 4,
+      id: 5,
       src: cinema,
       link: 'https://github.com/eladg123/Cinema-Site',
     },
     {
-      id: 5,
+      id: 6,
       src: chicagoBulls,
       link: 'https://github.com/eladg123/Mern-Chicago-Bulls-Client',
-    },
-    {
-      id: 6,
-      src: studentSite,
-      link: 'https://github.com/eladg123/Students-site',
     },
   ]
 
@@ -55,19 +63,26 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 ml-10 mr-10 sm:px-0 ">
-          {portfolios.map(({ id, src, link }) => (
+          {portfolios.map(({ id, src, link, web }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg ">
               <img
                 src={src}
                 alt=""
                 className="rounded-md duration-200 hover:scale-105 object-cover	h-48 w-96"
               />
-              <div className="flex items-center justify-center ">
-                <button className="h-auto p-3 duration-200 hover:scale-105">
+              <div className="flex flex-row  items-center justify-center">
+                <button className={web ? withWebBTNstyle : withoutWebBTNstyle}>
                   <a href={link} target="_blank" rel="noreferrer">
                     Code
                   </a>
                 </button>
+                {web && (
+                  <button className="h-auto p-3 duration-200 hover:scale-105">
+                    <a href={web} target="_blank" rel="noreferrer">
+                      Web
+                    </a>
+                  </button>
+                )}
               </div>
             </div>
           ))}
