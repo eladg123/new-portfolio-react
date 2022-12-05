@@ -1,6 +1,6 @@
 import React from 'react'
 import chicagoBulls from '../assets/portfolio/chicago.png'
-import cinema from '../assets/portfolio/cinema.png'
+import weather from '../assets/portfolio/weather.png'
 import createSet from '../assets/portfolio/create-set.png'
 import footShop from '../assets/portfolio/footshop.jpg'
 import shoppingCart from '../assets/portfolio/shopping-cart.png'
@@ -23,24 +23,25 @@ const Portfolio = () => {
       web: 'https://memories-social-media-eg.netlify.app/posts',
     },
     {
-      id: 21,
+      id: 2,
+      src: weather,
+      link: 'https://github.com/eladg123/weather-app',
+      web: 'https://weather-app-egil.netlify.app/',
+    },
+    {
+      id: 3,
       src: footShop,
       link: 'https://github.com/eladg123/FootStareCommerce',
     },
     {
-      id: 3,
+      id: 4,
       src: shoppingCart,
       link: 'https://github.com/eladg123/shoppingCart-redux-toolkit',
     },
     {
-      id: 4,
+      id: 5,
       src: createSet,
       link: 'https://github.com/eladg123/create-set-typescript',
-    },
-    {
-      id: 5,
-      src: cinema,
-      link: 'https://github.com/eladg123/Cinema-Site',
     },
     {
       id: 6,
