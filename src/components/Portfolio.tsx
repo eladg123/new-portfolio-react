@@ -15,36 +15,43 @@ const Portfolio = () => {
     src: string
     link: string
     web?: string
+    title: string
   }[] = [
     {
       id: 1,
+      title: 'Social media app',
       src: socialMedia,
       link: 'https://github.com/eladg123/sm-mern-server',
       web: 'https://memories-social-media-eg.netlify.app/posts',
     },
     {
       id: 2,
+      title: 'Weather app',
       src: weather,
       link: 'https://github.com/eladg123/weather-app',
       web: 'https://weather-app-egil.netlify.app/',
     },
     {
       id: 3,
+      title: 'Sport shop',
       src: footShop,
       link: 'https://github.com/eladg123/FootStareCommerce',
     },
     {
       id: 4,
+      title: 'Shopping cart',
       src: shoppingCart,
       link: 'https://github.com/eladg123/shoppingCart-redux-toolkit',
     },
     {
       id: 5,
+      title: 'Create set',
       src: createSet,
       link: 'https://github.com/eladg123/create-set-typescript',
     },
     {
       id: 6,
+      title: 'Chicago bulls tickets',
       src: chicagoBulls,
       link: 'https://github.com/eladg123/Mern-Chicago-Bulls-Client',
     },
@@ -64,8 +71,11 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 ml-10 mr-10 sm:px-0 ">
-          {portfolios.map(({ id, src, link, web }) => (
+          {portfolios.map(({ id, src, link, web, title }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg ">
+              <div className="items-center justify-center flex ">
+                <span className="py-2 font-semibold">{title}</span>
+              </div>
               <img
                 src={src}
                 alt=""
